@@ -3,6 +3,13 @@
 ## Descripció
 Una API bàsica desenvolupada en Node.js amb TypeScript, utilitzant Express i Mongoose per a la gestió de dades en MongoDB. A més, s'inclou documentació amb Swagger.
 
+
+## Minimo 1
+
+Basicamente lo que he hecho es crear una nueva coleccion para la base de datos (MongoDB/Mongoose) en la cual tiene su CRUD, su paginador y su buscador. He adaptado todos los archivos necesarios (models,routes,services,controller y server.ts) para que se puedan probar los endpoints directamente con el swagger. 
+
+Problemas que puede dar es que el número de la tag no puede repetirse con otro que esté en la base de datos.
+
 ## Requisits previs
 Abans d'executar el projecte, assegura't de tenir instal·lat:
 - [Node.js](https://nodejs.org/)

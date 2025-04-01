@@ -13,6 +13,7 @@ import { validateUserFields } from './middleware/userValidationSignIn.js';
 import { authMiddleware } from './middleware/authMiddleware.js';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
+import tagRoutes from './routes/tag_routes.js'; 
 
 dotenv.config(); // Cargamos las variables de entorno desde el archivo .env
 
@@ -61,7 +62,11 @@ const swaggerOptions = {
             { 
                 name: 'Juegos', 
                 description: 'Juegos entre usuarios' ,
-            }
+            },
+            { 
+                name: 'Tag', 
+                description: 'Gestión de etiquetas' ,
+            },
           ],
         servers: [
             {
@@ -82,11 +87,12 @@ app.use(loggingHandler);
 app.use(corsHandler);
 //rutas
 app.use('/api', userRoutes);
+
 //app.use('/api',messageRoutes);
 app.use('/api', forumRoutes);
 app.use('/api', droneRoutes);
 app.use('/api', gameRoutes);
-
+app.use('/api', tagRoutes);
 // Rutes de prova
 app.get('/', (req, res) => {
     res.send('Welcome to my API');
